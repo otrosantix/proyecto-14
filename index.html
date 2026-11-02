@@ -6,9 +6,10 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>Calculadora de Edad</title>
 
-
+    <!-- Estilos propios -->
     <link rel='stylesheet' href='css/estilos.css'>
-    <link rel='stylesheet' href='node_modules/js-datepicker/dist/datepicker.min.css'>
+    <!-- Estilos del datepicker (copiados de node_modules a libs/ para GitHub Pages) -->
+    <link rel='stylesheet' href='libs/datepicker.min.css'>
 </head>
 
 <body>
@@ -16,27 +17,29 @@
         <h1>Calculadora de Edad</h1>
         <h3>Introduzca su fecha de nacimiento:</h3>
 
-    
+        <!-- Ahora el botón es "submit" para que el formulario realmente se envíe -->
         <form id="FormularioEdad">
-            <input class="Fecha" type="text" id="fechaNacimiento" placeholder="D/MM/AAAA" readonly>
+            <!-- readonly: el usuario solo puede elegir la fecha desde el datepicker -->
+            <input class="Fecha" type="text" id="fechaNacimiento" placeholder="DD/MM/AAAA" readonly>
             <br>
             <button class="botonEnviar" type="submit">Calcular</button>
         </form>
         <br>
-        <h3 id="ContenedorEdad">TIENES:</h3>
+        <!-- Aquí se muestra el resultado (o el mensaje de error) -->
+        <h3 id="ContenedorEdad">EDAD:</h3>
     </div>
 
-    <!-- 1. El diccionario para Luxon -->
+    <!-- 1. El diccionario para Luxon (apunta a la copia en libs/) -->
     <script type="importmap">
     {
       "imports": {
-        "luxon": "./node_modules/luxon/build/es6/luxon.mjs"
+        "luxon": "./libs/luxon.mjs"
       }
     }
     </script>
 
     <!-- 2. El datepicker se carga como script normal y crea la función global "datepicker" -->
-    <script src="node_modules/js-datepicker/dist/datepicker.min.js"></script>
+    <script src="libs/datepicker.min.js"></script>
 
     <!-- 3. Nuestro script (type="module" porque importa Luxon) -->
     <script type="module" src="js/script.js"></script>
