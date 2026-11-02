@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Calculadora de Edad</title>
+
+
+    <link rel='stylesheet' href='css/estilos.css'>
+    <link rel='stylesheet' href='node_modules/js-datepicker/dist/datepicker.min.css'>
+</head>
+
+<body>
+    <div class="Principal">
+        <h1>Calculadora de Edad</h1>
+        <h3>Introduzca su fecha de nacimiento:</h3>
+
+    
+        <form id="FormularioEdad">
+            <input class="Fecha" type="text" id="fechaNacimiento" placeholder="D/MM/AAAA" readonly>
+            <br>
+            <button class="botonEnviar" type="submit">Calcular</button>
+        </form>
+        <br>
+        <h3 id="ContenedorEdad">TIENES:</h3>
+    </div>
+
+    <!-- 1. El diccionario para Luxon -->
+    <script type="importmap">
+    {
+      "imports": {
+        "luxon": "./node_modules/luxon/build/es6/luxon.mjs"
+      }
+    }
+    </script>
+
+    <!-- 2. El datepicker se carga como script normal y crea la función global "datepicker" -->
+    <script src="node_modules/js-datepicker/dist/datepicker.min.js"></script>
+
+    <!-- 3. Nuestro script (type="module" porque importa Luxon) -->
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>

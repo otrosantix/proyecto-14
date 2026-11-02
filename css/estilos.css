@@ -1,0 +1,46 @@
+*{
+    background-color: beige;
+}
+
+.Principal{
+    align-items: center;
+    text-align: center;
+    padding: 0.5vw;
+    font-size: 30px;
+    border: 1px solid black;
+    width: 100%;
+    box-sizing: border-box; 
+}
+.Fecha{
+    width: 19.9vw;
+    height: 2.1vw;
+    border-radius: 0.3vw;
+    font-size: 1.2vw;
+}
+.botonEnviar{
+    width: 19.9vw;
+    height: 2.1vw;
+    border-radius: 0.3vw;
+    background-color: gray;
+    font-size: 1.5vw;
+    cursor: pointer;
+}
+
+
+.Error{
+    color: red;
+}
+
+@media (max-width: 700px){
+    .Fecha,
+    .botonEnviar{
+        width: 80vw;
+        height: 10vw;
+    }
+    .Fecha{
+        font-size: 4vw;
+    }
+    .botonEnviar{
+        font-size: 5vw;
+    }
+}
